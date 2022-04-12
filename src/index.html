@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 1</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body class="font-iranyekan">
+    <!-- Top image -->
+    <div>
+        <img src="../images/top_image.png" alt="" class="w-full">
+    </div>
+
+    <!-- Grids -->
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="md:grid grid-cols-2 gap-4 md:-mt-16">
+            <form id="form" action="/"
+                class="bg-white rounded-md p-4 shadow-md mb-4 md:mb-0 mt-4 md:mt-0 border border-gray-200">
+                <div class="md:grid grid-cols-2 gap-4">
+                    <div class="flex items-center border border-gray-200 rounded-md p-4 mb-4 md:mb-0 input-control">
+                        <input id="incomeInput" name="income" type="radio" value="income"
+                            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300" checked>
+                        <label for="incomeInput" class="mr-3 block text-sm font-bold text-black">
+                            درآمد
+                        </label>
+                    </div>
+                    <div class="flex items-center border border-gray-200 rounded-md p-4 mb-4 md:mb-0 input-control">
+                        <input id="expenseInput" name="income" type="radio" value="expense"
+                            class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="expenseInput" class="mr-3 block text-sm font-bold text-black">
+                            هزینه
+                        </label>
+                    </div>
+                </div>
+
+                <div class="md:grid grid-cols-3 gap-4 mt-4">
+                    <div class="col-span-3 input-control mb-4">
+                        <label for="priceInput" class="block text-sm font-bold text-black mb-2">
+                            مبلغ
+                        </label>
+                        <input type="text" name="price" id="priceInput"
+                            class="bg-white w-full rounded-md border border-gray-200 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-70">
+
+                        <!-- Error -->
+                        <div class="mt-1">
+                            <span class="text-red-600 text-xs font-bold error"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-3 mb-2">
+                        <p for="priceInput" class="text-sm font-bold text-black">
+                            تاریخ
+                        </p>
+                    </div>
+
+                    <div class="input-control mb-4">
+                        <input type="text" name="day" id="dayInput"
+                            class="bg-white w-full rounded-md border border-gray-200 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-70"
+                            placeholder="روز">
+                        <!-- Error -->
+                        <div class="mt-1">
+                            <span class="text-red-600 text-xs font-bold error"></span>
+                        </div>
+                    </div>
+                    <div class="input-control mb-4">
+                        <input type="text" name="month" id="monthInput"
+                            class="bg-white w-full rounded-md border border-gray-200 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-70"
+                            placeholder="ماه">
+                        <!-- Error -->
+                        <div class="mt-1">
+                            <span class="text-red-600 text-xs font-bold error"></span>
+                        </div>
+                    </div>
+                    <div class="input-control mb-4">
+                        <input type="text" name="year" id="yearInput"
+                            class="bg-white w-full rounded-md border border-gray-200 px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-70"
+                            placeholder="سال">
+                        <!-- Error -->
+                        <div class="mt-1">
+                            <span class="text-red-600 text-xs font-bold error"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-3 input-control">
+                        <label for="descriptionInput" class="block text-sm font-bold text-black mb-2">
+                            توضیحات
+                        </label>
+                        <textarea id="descriptionInput" name="description"
+                            class="w-full h-32 resize-none border border-gray-200 text-sm px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-70"></textarea>
+                        <!-- Error -->
+                        <div class="mt-1">
+                            <span class="text-red-600 text-xs font-bold error"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-3">
+                        <button class="w-full py-3 bg-green-500 text-white text-sm rounded-md" type="submit">
+                            ثبت دخل و خرج
+                        </button>
+
+                        <div class="mt-4">
+                            <span id="success" class="text-sm font-bold text-green-600"></span>
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+
+        <div>
+            <div class="bg-white rounded-md p-4 shadow-md border border-gray-200">
+                <div class="grid grid-cols-2 gap-4 divide-x divide-x-reverse divide-gray-400">
+                    <div>
+                        <p class="font-medium text-black text-center">درآمد</p>
+                        <div class="mt-4">
+                            <p class="text-center text-green-600 font-bold" id="incomeSection">
+                                0
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-medium text-black text-center">هزینه</p>
+                        <div class="mt-4">
+                            <p class="text-center text-green-600 font-bold" id="expenseSection">
+                                0
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 bg-white rounded-md p-4 shadow-md border border-gray-200">
+                <canvas id="myChart" width="400" height="300"></canvas>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Table -->
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mt-4 bg-white rounded-md p-4 shadow-md border border-gray-200">
+            <div class="flex flex-col mt-4">
+                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-4 py-2 text-center text-xs text-gray-700">
+                                            ردیف
+                                        </th>
+                                        <th scope="col" class="px-4 py-2 text-center text-xs text-gray-700">
+                                            مبلغ
+                                        </th>
+                                        <th scope="col" class="px-4 py-2 text-center text-xs text-gray-700">
+                                            تاریخ
+                                        </th>
+                                        <th scope="col" class="px-4 py-2 text-center text-xs text-gray-700">
+                                            نوع هزینه
+                                        </th>
+                                        <th scope="col" class="px-4 py-2 text-center text-xs text-gray-700">
+                                            اقدامات
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200" id="showDataTable">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.9.6/dist/cdn.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
