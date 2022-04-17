@@ -5,7 +5,6 @@ const month = document.getElementById('monthInput');
 const year = document.getElementById('yearInput');
 const description = document.getElementById('descriptionInput');
 const form = document.getElementById('form');
-const success = document.getElementById('success');
 const showDataTable = document.getElementById('showDataTable');
 const incomeSection = document.getElementById('incomeSection');
 const expenseSection = document.getElementById('expenseSection');
@@ -256,6 +255,8 @@ const showItems = (items) => {
     //Calculate expense
     calculateExpense(items);
 
+    runChart();
+
     items.forEach((item, index) => {
 
         showDataTable.innerHTML += `
@@ -395,7 +396,6 @@ const showItems = (items) => {
             </tr>
         `
     });
-
 }
 
 //Delete specific item from localStorage
